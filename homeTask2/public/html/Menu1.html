@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .nav_border_program {
+            border-bottom: 1px solid rgba(0,0,0,.15);
+            border-top: 1px solid rgba(0,0,0,.15);
+            margin-top: 10px;
+            width: 100%;
+            background: #fcfcfc;
+            z-index: 2;
+        }
+        .wrapper_width_little_bigger {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .c {
+            font-size: 25px;
+            border: 1px solid rgba(0,0,0,0.3); /* Рамка */
+            display: inline-block;
+            padding: 10px 15px; /* Поля */
+            text-decoration: none; /* Убираем подчёркивание */
+            color: rgb(34, 34, 34); /* Цвет текста */
+        }
+        .c:hover {
+            box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+            background: #ceea41;
+            color: rgb(34, 34, 34);
+            text-decoration: none;
+        }
+
+            .program_nav {
+                overflow-y: hidden;
+                overflow-x: auto;
+                width: auto;
+                padding: 0 40px;
+            }
+            .program_nav {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                font-family: PFDinTextPro-Medium,sans-serif;
+                font-size: 14px;
+                line-height: 14px;
+                color: rgba(0,0,0,0.7);
+            }
+        .program_nav_each_title {
+            padding: 15px 25px;
+            min-width: 150px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: rgba(0,0,0,.7);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .program_nav_each_title.active {
+                color: #fff;
+                background: orange;
+                position: relative;
+            }
+        @media (max-width: 767px) and (min-width: 320px){
+            .program_nav {
+                overflow-y: hidden;
+                overflow-x: auto;
+                width: auto;
+                padding: 0 40px;
+            }}
+
+        .program_info_text {
+            font-family: PFDinTextPro-Light,sans-serif;
+            display: block;
+            font-size: 22px;
+            line-height: 32px;
+            color: rgba(0,0,0,0.6);
+            padding-bottom: 40px;
+        }
+        .program_img_main_title {
+            font-family: PFDinTextPro-Light,sans-serif;
+            font-size: 44px;
+            line-height: 48px;
+            display: block;
+            text-align: center;
+            padding-bottom: 50px;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .program_block_wrapper{
+            width: 60%;
+            margin: 0 auto;
+        }
+        h3 {
+            font-family: PFDinTextPro-Medium,sans-serif;
+            font-size: 26px;
+            line-height: 32px;
+            color: #f2994a;
+            text-transform: uppercase;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+
+        li{
+
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        .program_addit_info {
+            width: 100%;
+            padding-top: 30px;
+            padding-bottom: 80px;
+        }
+
+        .program_addit_info_text {
+            font-family: PFDinTextPro-Medium,sans-serif;
+            font-style: italic;
+            font-size: 22px;
+            text-align: center;
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            color: #333;
+            line-height: 32px;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Сбалансированное питание</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<!--
+<div class="little_nav_wrapper">
+            <span class="phones">
+                 <ul id="menu-menu-4" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19742"><span><a href="https://eatandtrain.ru/voprosy/">Вопросы</a></span></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19741"><span><a href="https://eatandtrain.ru/kontakty/">Контакты</a></span></li>
+</ul>
+                 <div class="sign_in_mob black"
+                      style="background:url('/wp-content/themes/eatntrain/img/mob_account.png') no-repeat center/100%;"></div>
+
+
+</div>
+-->
+<nav class="navbar navbar-light" style="height: 13%; background-color:#ceea41; color:white; opacity: 0.95" >
+
+<a class="navbar-brand" href="Page1.html">
+    <h1><span>
+            <img src="../изображения/eatsmart-logo1.jpg"class="img-fluid" style="height: 85px">
+        </span></h1>
+</a>
+
+<!-- <form class="form-inline my-2 my-lg-0">
+     <input type="text" class="form-control mr-sm-2" placeholder="Что хотите найти?"
+            aria-label="Search">
+     <button class="btn btn-outline-success my-2 my-sm-0">Найти</button>
+ </form>-->
+    <form action="SignIn.html">
+        <button type="submit" class="btn btn-success">Войти</button>
+    </form>
+</nav>
+
+<nav class="nav_border_program">
+    <div class="wrapper_width_little_bigger">
+        <ul class="program_nav" style="list-style: none;">
+            <li>
+                <a href="Menu1.html" >
+                    <div class="program_nav_each_title active"> Сбалансированное питание</div>
+                </a>
+            </li>
+            <li >
+                <a href="Menu4.html" >
+                    <div class="program_nav_each_title "> Низкоуглеводное питание</div>
+                </a>
+            </li>
+            <li >
+                <a href="Menu3.html" >
+                    <div class="program_nav_each_title "> Вегетарианское</div>
+                </a>
+            </li>
+            <li >
+                <a href="Menu2.html" >
+                    <div class="program_nav_each_title "> Постное</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="each_set_h1_wrapper">
+    <h1 class="program_img_main_title">Сбалансированное питание</h1>
+    <div class="program_img_text"></div>
+</div>
+
+<div class="conteiner" style="margin: 0; padding: 0 10% 0 10%; border: 0">
+    <div class="row">
+        <div class="col">
+            <figure style="overflow: hidden;"><img src="../изображения/standart-2-640x450.jpg"/></figure>
+
+        </div>
+        <div class="col">
+            <span class="program_info_text"><span>Стандартное здоровое питание для похудения, набора массы или поддержания формы. Подходит большинству людей.</span>
+                <p></p>
+                <h4 class="current_program_title"><strong>Что входит в рацион</strong></h4>
+<span>Готовое сбалансированное 5-разовое питание из 5-7 блюд. Блюда в меню не повторяются 10 дней.</span></span>
+            <h4 class="current_program_title">В составе:  </h4>
+
+            <span class="program_info_text">Постная говядина, красная/белая рыба, морепродукты, филе птиц, более 10 видов круп, фрукты, овощи, десерты.</span>
+            <div class="f" style="text-align: center; margin: 5%;"> <a href="HowZakazat.html" class="c">Сделать заказ</a></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="program_block_wrapper">
+    <div class="program_block_part"> -->
+<div class="container" style="padding: 20px 0;">
+    <div class="row">
+        <div class="col">
+        <h3>ПОДАРИТЕ СЕБЕ СВОБОДНОЕ ВРЕМЯ</h3>
+        <span class="program_info_text">На приготовление многих блюд здоровой кухни дома может уйти несколько часов — используйте это время на общение с близкими или любимые дела. </span>
+
+        <span class="program_info_text">Мы уже приготовили эти блюда, так что вам останется только дождаться курьера нашей доставки правильного питания.</span>
+    </div>
+
+   <!-- <div class="program_block_part"> -->
+        <div class="col">
+        <h3>ДОСТАВЛЯЕМ ВКУСНУЮ И ЗДОРОВУЮ ЕДУ</h3>
+        <ul class="program_info_text">
+            <li> Мы не жарим на масле, не используем сахар и соль</li>
+            <li>Готовим только из свежих продуктов</li>
+            <li>Бойкотируем консерванты и красители</li>
+            <li>Добавляем соусы собственного приготовления</li>
+            <li>Обрабатываем пищу, сохраняя максимальную пищевую ценность продуктов</li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<div class="program_addit_info">
+    <span class="program_addit_info_text">Уже на следующий день после оплаты вы получите свой первый набор — доставка на дом по Казани работает ежедневно</span>
+</div>
+</div>
+
+</body>
+</html>
