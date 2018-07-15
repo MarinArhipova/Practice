@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+   <!-- <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"> -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -87,25 +90,25 @@
             <p></p>
             <p></p>
             <p></p>
-            <form>
+            <form action="/info">
                 <div class="form-group">
                     <label for="lastName">Имя</label>
-                    <input type="password" class="form-control" id="lastName">
+                    <input type="text" class="form-control" id="lastName" name="lastName">
                 </div>
                 <p></p>
                 <div class="form-group">
                     <label for="firstName">Фамилия</label>
-                    <input type="password" class="form-control" id="firstName">
+                    <input type="text" class="form-control" id="firstName" name="firstName">
                 </div>
                 <p></p>
                 <div class="form-group">
                     <label for="phoneNumber">Телефон</label>
-                    <input type="password" class="form-control" id="phoneNumber" placeholder="+7-ХХХ-ХХХ-ХХ-ХХ">
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="+7-ХХХ-ХХХ-ХХ-ХХ" name="phoneNumber">
                 </div>
                 <p></p>
                 <div class="form-group">
                     <label for="progrPit">Программа питания</label>
-                    <select class="custom-select d-block w-100" id="progrPit" required>
+                    <select class="custom-select d-block w-100" id="progrPit" name="progrPit" required>
                         <option value="">Выбрать...</option>
                         <option>Сбалансированная</option>
                         <option>Низкоуглеводная</option>
@@ -116,24 +119,26 @@
                 <p></p>
                 <div class="form-group">
                     <label for="exampleInputCity">Город</label>
-                    <input type="password" class="form-control" id="exampleInputCity">
+                    <input type="text" class="form-control" id="exampleInputCity" name="exampleInputCity">
                 </div>
                 <p></p>
                 <div class="form-group">
                     <label for="exampleInputStreet">Улица</label>
-                    <input type="password" class="form-control" id="exampleInputStreet">
+                    <input type="text" class="form-control" id="exampleInputStreet" name="exampleInputStreet">
                 </div>
                 <p></p>
                 <div class="form-group">
                     <label for="exampleInputHouse">Дом</label>
-                    <input type="password" class="form-control" id="exampleInputHouse">
+                    <input type="text" class="form-control" id="exampleInputHouse" name="exampleInputHouse">
                 </div>
                 <p></p>
                 <div class="form-group">
                     <label for="exampleInputStreetFlat">Квартира</label>
-                    <input type="password" class="form-control" id="exampleInputStreetFlat">
+                    <input type="text" class="form-control" id="exampleInputStreetFlat" name="exampleInputStreetFlat">
                 </div>
-                <button type="submit" class="btn btn-primary" style="background-color: #f2994a; text-align: center; color: #5a2600" data-toggle="modal" data-target="#exampleModal">Заказать</button>
+                <!--<button type="submit" class="btn btn-primary" style="background-color: #f2994a; text-align: center; color: #5a2600" data-toggle="modal" data-target="#exampleModal">Заказать</button>-->
+            <input type="submit" value="Отправить">
+
             </form>
         </div>
         <div class="col-12 col-md-3"></div>
