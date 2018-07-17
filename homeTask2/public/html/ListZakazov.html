@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ListZakazov</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background-image: url("../изображения/slide-2.png");
+            background-size: cover;
+            background-attachment: fixed;
+            width: 100%;
+            height: auto;
+            color:black;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        .navbar{
+            padding: 0;
+            margin: 0;
+            border: 0;
+            position: absolute;
+        }
+
+        .container{
+            margin-top: 10%;
+            margin-bottom: 10%;
+
+        }
+        /* Для небольших устройств (смартфоны) */
+        img {
+            max-width: 100%;
+            display: inline-block;
+        }
+        /* Для средних устройств (планшеты) */
+        @media (min-width: 420px) {
+            img {
+                max-width: 48%;
+            }
+        }
+        /* Для больших устройств (ноуты, пк) */
+        @media (min-width: 760px) {
+            img {
+                max-width: 24%;
+            }
+        }
+    </style>
+
+
+    <script>
+        // описываем функцию, которая будет вызвана из бразуера
+        function getZakaz() {
+            // создаем оъект запроса
+            var xmlhttp = new XMLHttpRequest();
+            // указываем url, куда будет отправлен запрос
+            var url = "/HowZakazat";
+            // описываем функцию,которая будет срабатывать
+            // при корректной обработке запроса сервером
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    // получаем список людей в формате JSON
+                    var users = JSON.parse(this.responseText);
+                    // получаем объект на странице по его id
+                    var usersTable = document.getElementById('users_table');
+                    // готовим html-код, который нужно будет поместить
+                    // внутри таблицы
+                    var htmlZakazResult = "";
+                    htmlZakazResult = "<tr>" +
+                        "            <th>Имя  </th>\n" +
+                        "            <th>Фамилия  </th>\n" +
+                        "            <th>Телефон  </th>\n" +
+                        "            <th>Программа питания  </th>\n" +
+                        "            <th>Город  </th>\n" +
+                        "            <th>Улица  </th>\n" +
+                        "            <th>Дом  </th>\n" +
+                        "            <th>Квартира  </th>\n" +
+                        "        </tr>";
+                    for (var i = 0; i < users.length - 1; i++) {
+                        htmlZakazResult += '<tr>';
+                        htmlZakazResult += '<td>' + users[i].lastName + '</td>';
+                        htmlZakazResult += '<td>' + users[i].firstName + '</td>';
+                        htmlZakazResult += '<td>' + users[i].phoneNumber + '</td>';
+                        htmlZakazResult += '<td>' + users[i].progrPit + '</td>';
+                        htmlZakazResult += '<td>' + users[i].exampleInputCity + '</td>';
+                        htmlZakazResult += '<td>' + users[i].exampleInputStreet + '</td>';
+                        htmlZakazResult += '<td>' + users[i].exampleInputHouse + '</td>';
+                        htmlZakazResult += '<td>' + users[i].exampleInputStreetFlat + '</td>';
+                        htmlZakazResult += '</tr>';
+                    }
+                    usersTable.innerHTML = htmlZakazResult;
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body onload="getZakaz()">
+<nav class="navbar navbar-light fixed-top" style="height: 13%; background-color:#ceea41; color:white; opacity: 0.95">
+
+    <a class="navbar-brand" href="Page1.html">
+        <h1><span>
+            <img src="../изображения/eatsmart-logo1.jpg"class="img-fluid" style=" height: 90px">
+        </span></h1>
+    </a>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 col-md-2"></div>
+        <div class="col-12 col-md-8" style="border-radius: 4px;
+            color: #5a2600;
+            box-shadow:
+                    0 2px 2px rgba(0,0,0,0.2),
+                    0 1px 5px rgba(0,0,0,0.2),
+                    0 0 0 12px rgba(255,255,255,0.4);
+        padding: 15px;
+        background-color:#ceea41; opacity: 0.99;">
+            <div>
+                <table id="users_table">
+                </table>
+            </div>
+        </div>
+        <div class="col-12 col-md-2"></div>
+    </div>
+</div>
+
+</body>
+</html>
